@@ -1,3 +1,8 @@
+# encoding: utf-8
+#
+# Cookbook Name:: home_vbox_server 
+# Attribute:: default
+#
 default['home_vbox_server']['apt_sources'] = [
   'deb http://download.virtualbox.org/virtualbox/debian xenial contrib' ]
 default['home_vbox_server']['pkgs'] = [

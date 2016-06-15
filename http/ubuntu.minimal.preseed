@@ -49,4 +49,6 @@ d-i preseed/late_command string apt-install zsh; in-target chsh -s /bin/zsh; \
 in-target wget -O /tmp/chefdk.deb https://packages.chef.io/stable/ubuntu/12.04/chefdk_0.14.25-1_amd64.deb; \
 in-target sudo dpkg -i /tmp/chefdk.deb; \
 in-target sed -i.bak 's/quiet splash/nomodeset/' /etc/default/grub; \
-in-target sudo update-grub
+in-target sudo update-grub; \
+in-target sudo apt-get install openssh-server; \
+in-target sudo service ssh restart
