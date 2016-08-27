@@ -3,7 +3,6 @@ date > /etc/vagrant_box_build_time
 /usr/sbin/useradd vagrant 
 echo "vagrant"|passwd --stdin vagrant
 echo "vagrant ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-
 mkdir -pm 700 /home/vagrant/.ssh
 # curl -L https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub -o /home/vagrant/.ssh/authorized_keys
 cat  >/home/vagrant/.ssh/authorized_keys/vagrant.pub <<EOF

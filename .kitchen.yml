@@ -1,0 +1,20 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_solo
+  chef_solo_path: /opt/chefdk/bin/chef-solo
+
+platforms:
+  - name: ubuntu 
+    driver_config:
+      box: ubuntu-13.10
+      box_url: "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-13.10_chef-provisionerless.box"
+      require_chef_omnibus: false
+
+suites:
+  - name: default
+    run_list:
+      - recipe[home_vbox_server::default]
+    attributes:
