@@ -3,15 +3,13 @@ driver:
   name: vagrant
 
 provisioner:
-  name: chef_solo
-  chef_solo_path: /opt/chefdk/bin/chef-solo
+  name: chef_zero
 
 platforms:
   - name: ubuntu 
     driver_config:
       box: ubuntu-16.04
       box_url: file://~/cookbooks/home_vbox_server/ubuntu-16.04-amd64.box
-      require_chef_omnibus: false
       password: vagrant1
 
 suites:
