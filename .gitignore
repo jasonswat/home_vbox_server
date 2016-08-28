@@ -7,12 +7,12 @@ Berksfile.lock
 .*.sw[a-z]
 *.un~
 /cookbooks
-
+ubuntu-16.04-amd64.box
 # Bundler
 Gemfile.lock
 bin/*
 .bundle/*
-
+packer_cache
 Berksfile
 Gemfile
 Makefile

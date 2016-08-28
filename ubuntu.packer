@@ -7,6 +7,8 @@
     "builders": [{
         "type": "virtualbox-iso",
         "guest_os_type": "Ubuntu_64",
+        "communicator": "ssh", 
+        "ssh_pty": "true",
         "vboxmanage": [
             ["modifyvm", "{{.Name}}", "--memory", "512"]
         ],
@@ -22,8 +24,9 @@
         "ssh_username": "{{user `ssh_name`}}",
         "ssh_password": "{{user `ssh_pass`}}",
         "ssh_wait_timeout": "30m",
+        "output_directory": "output",
         "guest_additions_mode": "disable",
-        "shutdown_command": "sudo systemctl poweroff",
+        "shutdown_command": "echo {{user `ssh_pass`}} | sudo -E -S systemctl poweroff",
         "boot_wait": "5s",
         "boot_command" : [
         "<enter><wait>",
@@ -46,6 +49,12 @@
         "keyboard-configuration/layoutcode=us ",
         "<enter>"
         ]
+    }],
+    "provisioners": [{
+      "type": "shell",
+      "scripts": [
+      "scripts/vagrant.sh"
+      ]
     }],
     "post-processors": [{
         "type": "vagrant",

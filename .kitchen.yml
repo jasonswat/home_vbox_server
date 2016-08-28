@@ -9,9 +9,10 @@ provisioner:
 platforms:
   - name: ubuntu 
     driver_config:
-      box: ubuntu-13.10
-      box_url: "http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-13.10_chef-provisionerless.box"
+      box: ubuntu-16.04
+      box_url: file://~/cookbooks/home_vbox_server/ubuntu-16.04-amd64.box
       require_chef_omnibus: false
+      password: vagrant1
 
 suites:
   - name: default
