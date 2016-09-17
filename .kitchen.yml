@@ -10,7 +10,6 @@ platforms:
     driver_config:
       box: ubuntu-16.04
       box_url: file://~/cookbooks/home_vbox_server/ubuntu-16.04-amd64.box
-      password: vagrant1
 
 suites:
   - name: default

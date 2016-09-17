@@ -31,3 +31,8 @@ To build the vbox image:
 ```
 packer build ubuntu.packer
 ```
+
+```
+kitchen create
+kitchen converge
+```

@@ -52,6 +52,7 @@
     }],
     "provisioners": [{
       "type": "shell",
+      "execute_command": "echo 'vagrant1' | {{.Vars}} sudo -S -E bash '{{.Path}}'",
       "scripts": [
       "scripts/vagrant.sh"
       ]
