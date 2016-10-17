@@ -15,7 +15,6 @@ default['home_vbox_server']['pkgs'] = [
   'xorg',
   'openbox',
   'obconf',
-  'openbox-themes',
   'fglrx',
   'firefox'
   ]
