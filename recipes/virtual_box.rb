@@ -16,6 +16,7 @@ end
 
 execute 'install_virtualbox_key' do
     command 'apt-key add /var/tmp/oracle_vbox.asc'
+    action :nothing
 end
 
 template "/etc/apt/sources.list.d/#{@cookbook_name}.list" do
