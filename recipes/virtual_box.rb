@@ -2,14 +2,6 @@
 # Cookbook Name: home_vbox_server
 # Recipe: virtual_box 
 
-execute 'apt-get-update' do
-  command 'apt-get clean'
-  command 'apt-get update;apt-key update'
-  command 'apt-get install debian-keyring debian-archive-keyring'
-  ignore_failure true
-  action :nothing
-end
-
 ['debian-keyring', 'debian-archive-keyring'].each do |pkg|
   package pkg do
     options '--force-yes'
@@ -18,7 +10,6 @@ end
 
 execute 'install_virtualbox_key' do
     command 'apt-key add /var/tmp/oracle_vbox.asc'
-    action :nothing
 end
 
 template "/etc/apt/sources.list.d/#{@cookbook_name}.list" do
