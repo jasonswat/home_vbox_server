@@ -10,5 +10,12 @@ default['home_vbox_server']['pkgs'] = [
   'build-essential',
   'virtualbox',
   'dkms',
-  "linux-headers-#{node['kernel']['release']}"
+  "linux-headers-#{node['kernel']['release']}",
+  'linux-headers-generic',
+  'xorg',
+  'openbox',
+  'obconf',
+  'openbox-themes',
+  'fglrx',
+  'firefox'
   ]
