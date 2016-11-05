@@ -10,6 +10,14 @@ Prereq, it needs chef to be installed. For the vm, I installed it manaully for t
 ```
 wget https://packages.chef.io/stable/ubuntu/12.04/chefdk_0.14.25-1_amd64.deb
 sudo dpkg -i chefdk_0.14.25-1_amd64.deb
+git clone https://github.com/jasonswat/home_vbox_server.git
+cd home_vbox_server
+./install
+```
+
+To setup the amd drivers
+```
+sudo amdconfig --initial
 ```
 
 ## Testing with Packer Image
