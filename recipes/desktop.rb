@@ -36,3 +36,16 @@ execute 'install_ohmyzsh' do
   command 'sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
   not_if { File.exist?("/home/#{node['home_vbox_server']['user']}/.oh-my-zsh") }
 end
+
+execute 'add_chrome_repo' do
+  code <<-EOH
+  echo "deb http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/chrome.list
+  wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  EOH
+  not_if { File.exist?('/etc/apt/sources.list.d/chrome.list') }
+  notifies :install, 'apt_package[chrome]', :immediately
+end
+
+apt_package 'chrome' do
+  action :nothing
+end
